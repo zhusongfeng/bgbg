@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>背景</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        fieldset,img {
+            border: 0;
+        }
+        address,caption,cite,code,dfn,em,strong,th,var {
+            font-weight: normal;
+            font-style: normal;
+        }
+        ol,ul {
+            list-style: none;
+        }
+        caption,th {
+            text-align: left;
+        }
+        h1,h2,h3,h4,h5,h6 {
+            font-weight: normal;
+            font-size: 100%;
+        }
+        q:before,q:after {
+            content:��;
+        }
+        abbr,acronym { border: 0;
+        }
+        /* == clearfix == */
+        .clearfix:after {
+            content: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+        .clearfix {display: inline-block;}
+        * html .clearfix {height: 1%;}
+        .clearfix {display: block;}
+        html {
+            height: 100%;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            /*overflow: hidden;*/
+            background: url("image/bg.png") no-repeat;
+            background-size: 100% 100%;
+            box-sizing: border-box;
+        }
+
+        .container {
+            padding-top: 80px;
+            text-align: center;
+        }
+
+        .title {
+            font-size: 66px;
+            color: #854922;
+            letter-spacing: 30px;
+        }
+
+        .start-test-img:last-child{
+            margin-right: 0;
+        }
+        .tab{
+            display: flex;
+            justify-content:center;
+            align-items:Center;
+            margin-top: 80px;
+        }
+
+
+        .start-test-img{
+            /*position: absolute;*/
+            width: 184px;
+            height: 358px;
+            background: url("image/button.png") no-repeat;
+            background-size: 100% 100%;
+            box-sizing: border-box;
+            margin-right: 60px;
+        }
+        .start-test-title{
+            position: relative;
+            top: 50px;
+            left: 0px;
+            display: inline-block;
+            font-size: 34px;
+            line-height: 55px;
+            color: #854922;
+            width: 46px;
+            height: 223px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="title">华佗云中医体质辨识仪</div>
+    <div class="tab">
+        <a href="http://www.baidu.com" class="start-test-img">
+            <span class="start-test-title">开始测试</span>
+        </a>
+       <!-- <a href="http://www.baidu.com" class="start-test-img">
+            <span class="start-test-title">专病药膳</span>
+        </a>
+        <a href="http://www.baidu.com" class="start-test-img">
+            <span class="start-test-title">儿童测试</span>
+        </a>
+        <a href="http://www.baidu.com" class="start-test-img">
+            <span class="start-test-title">治未病</span>
+        </a>-->
+
+
+    </div>
+</div>
+
+</body>
+</html>

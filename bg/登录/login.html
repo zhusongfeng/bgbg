@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>背景</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        fieldset,img {
+            border: 0;
+        }
+        address,caption,cite,code,dfn,em,strong,th,var {
+            font-weight: normal;
+            font-style: normal;
+        }
+        ol,ul {
+            list-style: none;
+        }
+        caption,th {
+            text-align: left;
+        }
+        h1,h2,h3,h4,h5,h6 {
+            font-weight: normal;
+            font-size: 100%;
+        }
+        q:before,q:after {
+            content:��;
+        }
+        abbr,acronym { border: 0;
+        }
+        /* == clearfix == */
+        .clearfix:after {
+            content: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+        .clearfix {display: inline-block;}
+        * html .clearfix {height: 1%;}
+        .clearfix {display: block;}
+        html {
+            height: 100%;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            /*overflow: hidden;*/
+            background: url("image/bg.png") no-repeat;
+            background-size: 100% 100%;
+            box-sizing: border-box;
+        }
+
+        .container {
+            padding-top: 80px;
+            text-align: center;
+        }
+
+        .title {
+            font-size: 66px;
+            color: #854922;
+            letter-spacing: 30px;
+        }
+
+        .start-test-img:last-child{
+            margin-right: 0;
+        }
+        .tab{
+            display: flex;
+            justify-content:center;
+            align-items:Center;
+            margin-top: 80px;
+        }
+        .start-test-from{
+            display: inline-block;
+            width: 628px;
+            height: 460px;
+            background: url("image/registers.png") no-repeat;
+            background-size: 100% 100%;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .container-location{
+            margin: 138px auto 10px;
+            position: relative;
+        }
+        .mechanism,.phone{
+            display: flex;
+            width: 350px;
+            text-align: left;
+            margin: auto;
+            border-bottom: 1px solid  #E2E2E2;
+        }
+        .mechanism-icon,.phone-icon{
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            margin-right: 10px;
+            margin-top: 3px;
+            background: url("image/icon-mechanism.png") no-repeat;
+            background-size: 100% 100%;
+            box-sizing: border-box;
+        }
+        .mechanism-name,.phone-name{
+            line-height: 35px;
+            border: none;
+            flex: 1;
+            outline: none;
+        }
+        .phone-icon{
+            margin-top: 4px;
+            background: url("image/icon-phone.png") no-repeat;
+        }
+        .phone{
+            margin-top: 30px;
+        }
+        .submission{
+            width: 350px;
+            height: 44px;
+            line-height: 44px;
+            font-size: 16px;
+            color: #FFFDFA;
+            margin: 56px auto 0;
+            text-align: center;
+            background: #854922;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .validation-name{
+            position: absolute;
+            font-size: 13px;
+            color:#D70B0B ;
+            text-align: left;
+            margin-top: 4px;
+            margin-left: 140px;
+        }
+        .line{
+            border-bottom: 1px solid  #D70B0B;
+        }
+        [v-cloak]{  display:none;  }
+    </style>
+</head>
+<body>
+<div class="container" id="app"  v-clock>
+    <div class="title">华佗云中医体质辨识仪</div>
+    <div class="tab">
+        <form :model="ruleForm" ref="ruleForm" class="start-test-from">
+            <div class="container-location">
+                <div class="mechanism" :class="{line:showMechanismName}">
+                    <sapn class="mechanism-icon"></sapn>
+                    <input type="text" v-model.trim ="ruleForm.mechanismName"
+                           class="mechanism-name" name="mechanism" placeholder="请输入机构名称">
+                </div>
+                <div class="validation-name" v-if="showMechanismName">机构名称不能为空</div>
+            </div>
+
+
+            <div class="phone" :class="{line:showPhoneNumber,line:showCorrectPhoneNumber}">
+                <sapn class="phone-icon "></sapn>
+                <input type="text" v-model.trim ="ruleForm.phoneNumber"
+                       class="phone-name" name="phone" placeholder="请输入手机号">
+            </div>
+            <div class="validation-name" v-if="showPhoneNumber">手机号不能为空</div>
+            <div class="validation-name" v-if="showCorrectPhoneNumber">请输入正确的手机号</div>
+            <div class="submission" @click="submitForm(ruleForm)">提&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;交</div>
+        </form>
+
+
+    </div>
+</div>
+<script  type="text/javascript" src="vue.min.js"></script>
+<script type="text/javascript" src="login.js"></script>
+</body>
+</html>
